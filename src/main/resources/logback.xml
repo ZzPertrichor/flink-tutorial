@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds" debug="false">
+    <contextName>flink</contextName>
+    <property name="log.charset" value="utf-8"/>
+    <property name="log.pattern"
+              value="%red(%contextName) %red(%d{yyyy-MM-dd HH:mm:ss}) %green([%15.15thread]) %highlight(%-5level) %boldMagenta(%-40.40logger{39}) : %m%n"/>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${log.pattern}</pattern>
+            <charset>${log.charset}</charset>
+        </encoder>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="console"/>
+    </root>
+</configuration>
